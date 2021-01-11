@@ -5,23 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style/main.css">
-    <title>pokedex</title>
+    <title>Pokedex</title>
 </head>
 
 <body>
+
     <header>
         <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
             <a class="navbar-brand" href="#">
-                <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-                <span class="ml-2">pokedex</span>
+                <img src="https://cdn.bulbagarden.net/upload/4/4b/Pok%C3%A9dex_logo.png" width="100" height="45" alt=""
+                    loading="lazy">
             </a>
         </nav>
     </header>
-    <main>
-        <div id="app"></div>
+
+
+    <main class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-md-7 col-sm-12">
+                <div class="container-fluid">
+
+                    <div class="row mt-4 mx-4 bg-warning pt-2">
+                        <div class="col-6 d-flex justify-content-start">
+                            <button id="previous" class="btn btn-dark"
+                                onclick="app.allPokemonController.nextList('previous')"><i class="fa fa-arrow-left"
+                                    aria-hidden="true"></i></button>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end">
+                            <button id="next" class="btn btn-dark"
+                                onclick="app.allPokemonController.nextList('next')"><i class="fa fa-arrow-right"
+                                    aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                    <div id="allPokemon" class="row bg-warning mx-4 mb-4 justify-content-center">
+                        <div class="col-2">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/244.png"
+                                alt="" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div id="myPokemon" class="row bg-primary m-4">
+                        <div class="col-2">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/244.png"
+                                alt="" class="img-fluid">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="activePokemon" class="col-md-4 col-sm-12 bg-success"></div>
+        </div>
+
     </main>
     <footer class="container-fluid bg-dark text-light">
         <div class="row text-center">
@@ -30,6 +72,10 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"></script>
 
     <script src="app/main.js" type="module"></script>
 </body>
